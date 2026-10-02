@@ -24,10 +24,6 @@ header {
     gap: 12px;
 }
 
-.logo span {
-    font-size: 35px;
-}
-
 .logo h1 {
     font-size: 25px;
 }
@@ -88,11 +84,39 @@ main {
     font-size: 25px;
 }
 
+.local-atual {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f5f7f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.local-atual > span {
+    font-size: 25px;
+}
+
+.local-atual small {
+    display: block;
+    color: #777;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.local-atual strong {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
 .coordenadas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin: 25px 0;
+    margin: 20px 0;
 }
 
 .coordenada {
@@ -117,15 +141,10 @@ main {
 .ultima-localizacao {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
     background: #fff8e6;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
-}
-
-.ultima-localizacao span {
-    font-size: 20px;
 }
 
 .ultima-localizacao p {
@@ -148,7 +167,6 @@ button {
 }
 
 button:hover {
-    background: #e31111;
     transform: translateY(-1px);
 }
 

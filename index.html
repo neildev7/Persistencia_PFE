@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="logo">
             <div>
@@ -30,57 +31,83 @@
 
             <div class="gps-top">
                 <span class="gps-icon">📡</span>
+
                 <div>
                     <h2>Minha localização</h2>
                     <p id="status">Buscando localização...</p>
                 </div>
+
                 <span id="sinal" class="sinal">●</span>
             </div>
 
+            <div class="local-atual">
+                <span>📍</span>
+
+                <div>
+                    <small>Local aproximado</small>
+                    <strong id="nome-local">Identificando local...</strong>
+                </div>
+            </div>
+
             <div class="coordenadas">
+
                 <div class="coordenada">
                     <span>Latitude</span>
                     <strong id="latitude">--</strong>
                 </div>
+
                 <div class="coordenada">
                     <span>Longitude</span>
                     <strong id="longitude">--</strong>
                 </div>
+
             </div>
+
             <div class="ultima-localizacao">
                 <p id="ultima">
                     Nenhuma localização salva ainda.
                 </p>
             </div>
+
             <button id="atualizar">
-                 Atualizar localização
+                Atualizar localização
             </button>
+
         </section>
+
         <section class="mapa-container">
+
             <div class="mapa-titulo">
                 <h2>Mapa</h2>
                 <span>OpenStreetMap</span>
             </div>
 
             <div id="mapa"></div>
+
         </section>
+
     </main>
+
     <div class="papel" id="papel" draggable="true">
         📄
         <span>Arraste</span>
     </div>
+
     <div class="lixeira" id="lixeira">
         🗑️
         <span>Solte aqui</span>
     </div>
+
     <div id="mensagem" class="mensagem">
         Localização apagada.
     </div>
 
-<footer>
-    Caso deseje apagar a localização, arraste o papel para a lixeira. <br>
-</footer>
+    <footer>
+        Caso deseje apagar a localização, arraste o papel para a lixeira.
+    </footer>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
