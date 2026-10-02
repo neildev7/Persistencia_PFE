@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f4f7;
+    color: #20252b;
+    min-height: 100vh;
+}
+
+header {
+    background: #e31111;
+    padding: 20px 8%;
+    color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo span {
+    font-size: 35px;
+}
+
+.logo h1 {
+    font-size: 25px;
+}
+
+.logo p {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-top: 3px;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 25px;
+}
+
+.gps-card,
+.mapa-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.gps-card {
+    padding: 25px;
+}
+
+.gps-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.gps-icon {
+    background: #e8f3ff;
+    padding: 12px;
+    font-size: 25px;
+}
+
+.gps-top h2 {
+    font-size: 19px;
+}
+
+.gps-top p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.sinal {
+    margin-left: auto;
+    color: #27ae60;
+    font-size: 25px;
+}
+
+.coordenadas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.coordenada {
+    background: #f5f7f9;
+    padding: 17px;
+    border-radius: 10px;
+}
+
+.coordenada span {
+    display: block;
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.coordenada strong {
+    font-size: 16px;
+    color: #e31111;
+    word-break: break-all;
+}
+
+.ultima-localizacao {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #fff8e6;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.ultima-localizacao span {
+    font-size: 20px;
+}
+
+.ultima-localizacao p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #555;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: #e31111;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #e31111;
+    transform: translateY(-1px);
+}
+
+.mapa-container {
+    padding: 15px;
+}
+
+.mapa-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px 15px;
+}
+
+.mapa-titulo h2 {
+    font-size: 19px;
+}
+
+.mapa-titulo span {
+    font-size: 12px;
+    color: #777;
+}
+
+#mapa {
+    height: 430px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.papel,
+.lixeira {
+    position: fixed;
+    bottom: 25px;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
+    z-index: 1000;
+}
+
+.papel {
+    left: 25px;
+    background: white;
+    cursor: grab;
+}
+
+.papel:active {
+    cursor: grabbing;
+}
+
+.lixeira {
+    right: 25px;
+    background: #e9ecef;
+}
+
+.papel span,
+.lixeira span {
+    font-size: 10px;
+    color: #555;
+    margin-top: 3px;
+}
+
+.lixeira.destino {
+    transform: scale(1.12);
+    background: #ffdede;
+}
+
+.mensagem {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background: #222;
+    color: white;
+    padding: 13px 18px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 0.3s;
+    pointer-events: none;
+    z-index: 2000;
+}
+
+.mensagem.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    padding: 20px 0 120px;
+}
+
+@media (max-width: 800px) {
+
+    main {
+        grid-template-columns: 1fr;
+        width: 94%;
+        margin-top: 20px;
+    }
+
+    #mapa {
+        height: 350px;
+    }
+
+    .gps-card {
+        padding: 20px;
+    }
+
+    header {
+        padding: 18px 5%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .coordenadas {
+        grid-template-columns: 1fr;
+    }
+
+    .papel,
+    .lixeira {
+        width: 70px;
+        height: 70px;
+        bottom: 15px;
+    }
+
+    .papel {
+        left: 15px;
+    }
+
+    .lixeira {
+        right: 15px;
+    }
+}

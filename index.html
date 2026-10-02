@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GPS SENAI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <div>
+                <h1>GPS SENAI</h1>
+                <p>Mini mapa de localização</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="gps-card">
+
+            <div class="gps-top">
+                <span class="gps-icon">📡</span>
+                <div>
+                    <h2>Minha localização</h2>
+                    <p id="status">Buscando localização...</p>
+                </div>
+                <span id="sinal" class="sinal">●</span>
+            </div>
+
+            <div class="coordenadas">
+                <div class="coordenada">
+                    <span>Latitude</span>
+                    <strong id="latitude">--</strong>
+                </div>
+                <div class="coordenada">
+                    <span>Longitude</span>
+                    <strong id="longitude">--</strong>
+                </div>
+            </div>
+            <div class="ultima-localizacao">
+                <p id="ultima">
+                    Nenhuma localização salva ainda.
+                </p>
+            </div>
+            <button id="atualizar">
+                 Atualizar localização
+            </button>
+        </section>
+        <section class="mapa-container">
+            <div class="mapa-titulo">
+                <h2>Mapa</h2>
+                <span>OpenStreetMap</span>
+            </div>
+
+            <div id="mapa"></div>
+        </section>
+    </main>
+    <div class="papel" id="papel" draggable="true">
+        📄
+        <span>Arraste</span>
+    </div>
+    <div class="lixeira" id="lixeira">
+        🗑️
+        <span>Solte aqui</span>
+    </div>
+    <div id="mensagem" class="mensagem">
+        Localização apagada.
+    </div>
+
+<footer>
+    Caso deseje apagar a localização, arraste o papel para a lixeira. <br>
+</footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
